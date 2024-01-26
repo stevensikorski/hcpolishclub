@@ -42,7 +42,7 @@ export default function HeaderComponent() {
               </Link>
             </div>
 
-            <div className="absolute mt-2 p-2 space-y-2 w-48 bg-white border rounded-md shadow-lg left-1/2 transform -translate-x-1/2">
+            <div className="hidden absolute z-50 mt-2 p-2 space-y-2 w-48 bg-white border rounded-md shadow-lg left-1/2 transform -translate-x-1/2">
               <Link href="/" className="block">
                 <p className="p-2 text-sm text-secondary rounded-md transition-property hover:bg-slate-50">Dropdown item 1</p>
               </Link>
@@ -68,7 +68,7 @@ export default function HeaderComponent() {
               </Link>
             </div>
 
-            <div className="absolute mt-2 p-2 space-y-2 w-48 bg-white border rounded-md shadow-lg left-1/2 transform -translate-x-1/2">
+            <div className="hidden absolute z-50 mt-2 p-2 space-y-2 w-48 bg-white border rounded-md shadow-lg left-1/2 transform -translate-x-1/2">
               <Link href="/" className="block">
                 <p className="p-2 text-sm text-secondary rounded-md transition-property hover:bg-slate-50">Dropdown item 1</p>
               </Link>
@@ -88,13 +88,14 @@ export default function HeaderComponent() {
             <div className="flex items-center">
               <Link href="/" className="mx-2 px-4 py-2 relative transition-property rounded-md transition-property hover:bg-slate-50">
                 <div className="flex items-center">
-                  <p className="text-primary">Get Involved</p>
+                  <p className="text-primary font-semibold">Get Involved</p>
                   <FaChevronDown className="ml-2 h-3 w-3 text-secondary" />
                 </div>
               </Link>
+              <span className="absolute inset-x-2 -bottom-[12px] h-[2px] bg-czerwony"></span>
             </div>
 
-            <div className="absolute mt-2 p-2 space-y-2 w-48 bg-white border rounded-md shadow-lg left-1/2 transform -translate-x-1/2">
+            <div className="hidden absolute z-50 mt-2 p-2 space-y-2 w-48 bg-white border rounded-md shadow-lg left-1/2 transform -translate-x-1/2">
               <Link href="/" className="block">
                 <p className="p-2 text-sm text-secondary rounded-md transition-property hover:bg-slate-50">Dropdown item 1</p>
               </Link>
