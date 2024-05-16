@@ -14,7 +14,7 @@ export default function HeaderComponent() {
         <Link href="/" className="flex">
           <Image src="/CoatOfArms.svg" alt="Coat of Arms" height="40" width="40" className="rounded-md"></Image>
           <div className="h-10 py-1 ml-2 my-auto">
-            <p className="h-1/2 text-sm text-primary tracking-tighter text-nowrap flex items-center">Polish Club</p>
+            <p className="h-1/2 text-sm text-primary tracking-tighter text-nowrap flex items-center">Polish Cultural Club</p>
             <p className="h-1/2 text-sm text-primary tracking-tighter text-nowrap flex items-center font-semibold">Hunter College</p>
           </div>
         </Link>
