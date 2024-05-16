@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${ebgaramond.variable} ${lexend.variable} ${merriweather.variable} ${roboto.variable} bg-slate-50`}>{children}</body>
+      <body className={`${ebgaramond.variable} ${lexend.variable} ${merriweather.variable} ${roboto.variable}`}>{children}</body>
     </html>
   );
 }
