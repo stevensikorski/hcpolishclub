@@ -4,16 +4,21 @@ const config: Config = {
   content: ["./src/pages/**/*.{js,ts,jsx,tsx,mdx}", "./src/components/**/*.{js,ts,jsx,tsx,mdx}", "./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
-      fontFamily: {
-        ebgaramond: ["--font-ebgaramond"],
-        merriweather: ["--font-merriweather"],
-        roboto: ["--font-roboto"],
-      },
       colors: {
         czerwony: "#DC143C",
-        primary: "#09090b",
-        secondary: "#52525b",
-        tertiary: "#a1a1aa",
+        czarny: "#09090B",
+        szary: "#52525B",
+        srebro: "#A1A1AA",
+        bialy: "#FFF2F2",
+      },
+      screens: {
+        mobile: "0px",
+        tablet: "768px",
+        desktop: "1280px",
+      },
+      height: {
+        banner: "calc(50vh - 4rem)",
+        landing: "calc(100vh - 4rem)",
       },
     },
   },

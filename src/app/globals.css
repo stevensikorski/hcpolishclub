@@ -2,20 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-.font-ebgaramond {
-  font-family: var(--font-ebgaramond);
+@layer base {
+  body {
+    @apply bg-slate-50;
+  }
+  h1 {
+    @apply text-xl tablet:text-2xl text-czarny;
+  }
+  h2 {
+    @apply text-lg tablet:text-xl text-czarny;
+  }
+  p {
+    @apply text-sm tablet:text-base text-szary;
+  }
+  hr {
+    @apply my-3 desktop:my-6;
+  }
 }
 
-.font-merriweather {
-  font-family: var(--font-merriweather);
+@layer components {
+  .page {
+    @apply mx-auto tablet:max-w-screen-tablet desktop:max-w-screen-desktop px-3;
+  }
+  .full {
+    @apply mx-auto max-w-full;
+  }
+  .page-main {
+    @apply pt-16 min-h-screen;
+  }
+  .page-text {
+    @apply mb-4;
+  }
+  .footer-text {
+    @apply text-white text-sm tablet:text-base;
+  }
+  .footer-social {
+    @apply size-5 tablet:size-6 text-white hover:text-red-800 transition duration-200;
+  }
+  .footer-icon {
+    @apply size-5 tablet:size-6 text-white group-hover:text-red-800 transition;
+  }
+  .footer-link {
+    @apply ml-1 group-hover:text-red-800 transition duration-200;
+  }
+  .mobile-button {
+    @apply size-6 text-szary;
+  }
+  .logo-text {
+    @apply h-1/2 text-sm text-szary tracking-tighter text-nowrap flex items-center;
+  }
+  .text-padding {
+    @apply my-6 desktop:my-12;
+  }
 }
 
-.font-roboto {
-  font-family: var(--font-roboto);
-}
-
-.transition-property {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+@layer utilities {
+  .duration-250 {
+    transition: all 0.25s;
+  }
 }
