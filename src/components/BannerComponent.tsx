@@ -14,8 +14,8 @@ export default function BannerComponent() {
   return (
     <section className={`full h-banner w-full`}>
       <div className={`relative h-banner w-full bg-czerwony flex flex-col justify-center text-center items-center`}>
-        <Image src="/Hunter.jpeg" alt="Hunter" layout="fill" objectFit="cover" objectPosition="bottom" priority className="absolute inset-0 z-0 grayscale opacity-25"></Image>
-        <Image src="/CoatOfArmsTransparent.svg" alt="Coat of Arms" height="24" width="24" className="relative size-20"></Image>
+        <Image src="/Hunter.jpeg" alt="Image" fill priority style={{ objectFit: "cover", objectPosition: "bottom" }} className="absolute inset-0 grayscale opacity-25"></Image>
+        <Image src="/CoatOfArmsTransparent.svg" alt="Image" height="24" width="24" className="relative size-20"></Image>
         <motion.button onClick={scrollPage} className="absolute bottom-0 mb-4 z-20 hidden desktop:block" animate={{ y: [0, -4, 0] }} transition={{ repeat: Infinity, duration: 1 }}>
           <MdOutlineKeyboardArrowDown className="relative size-8 text-white"></MdOutlineKeyboardArrowDown>
         </motion.button>

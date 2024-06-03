@@ -6,7 +6,7 @@ export default function Home() {
     <main className="page-main">
       <section className={`full h-landing w-full`}>
         <div className={`relative h-landing w-full bg-czerwony flex flex-col justify-center text-center items-center`}>
-          <Image src="/Hunter.jpeg" alt="Hunter" layout="fill" objectFit="cover" objectPosition="bottom" priority className="absolute inset-0 z-0 grayscale opacity-25"></Image>
+          <Image src="/Hunter.jpeg" alt="Image" fill priority style={{ objectFit: "cover", objectPosition: "bottom" }} className="absolute inset-0 z-0 grayscale opacity-25"></Image>
         </div>
       </section>
       <section className="page text-padding">

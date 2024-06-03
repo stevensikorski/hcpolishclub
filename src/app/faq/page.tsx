@@ -3,11 +3,11 @@ import TitleComponent from "@/components/TitleComponent";
 
 import { filler } from "@/library/data";
 
-export default function Home() {
+export default function FrequentlyAskedQuestionsPage() {
   return (
     <main className="page-main">
       <BannerComponent></BannerComponent>
-      <TitleComponent english={"Frequently Asked Questions"} polish={"Najczęściej Zadawane Pytania"}></TitleComponent>
+      <TitleComponent params={{ english: "Frequently Asked Questions", polish: "Najczęściej Zadawane Pytania" }}></TitleComponent>
       <section className="page text-padding">
         <p className="page-text">{filler.text}</p>
         <p className="page-text">{filler.text}</p>

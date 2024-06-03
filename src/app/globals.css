@@ -40,7 +40,7 @@
     @apply size-5 tablet:size-6 text-white hover:text-red-800 transition duration-200;
   }
   .footer-icon {
-    @apply size-5 tablet:size-6 text-white group-hover:text-red-800 transition;
+    @apply size-5 tablet:size-6 text-white group-hover:text-red-800 transition duration-200;
   }
   .footer-link {
     @apply ml-1 group-hover:text-red-800 transition duration-200;
