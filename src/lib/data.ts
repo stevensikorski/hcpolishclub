@@ -19,9 +19,29 @@ export const navigationData = {
     list: true,
     visible: true,
     items: {
+      leadership: {
+        text: "Leadership",
+        url: "/leadership",
+        visible: true,
+      },
       photos: {
         text: "Photos",
         url: "/photos",
+        visible: true,
+      },
+      login: {
+        text: "Login",
+        url: "/login",
+        visible: false,
+      },
+      portal: {
+        text: "Portal",
+        url: "/portal",
+        visible: true,
+      },
+      dashboard: {
+        text: "Dashboard",
+        url: "/dashboard",
         visible: true,
       },
     },
@@ -32,9 +52,9 @@ export const navigationData = {
     list: true,
     visible: true,
     items: {
-      leadership: {
-        text: "Leadership",
-        url: "/leadership",
+      culturalclub: {
+        text: "Cultural Club",
+        url: "/culturalclub",
         visible: true,
       },
       faq: {
@@ -56,13 +76,8 @@ export const navigationData = {
     visible: true,
     items: {
       membership: {
-        text: "Membership",
+        text: "Become a Member",
         url: "/membership",
-        visible: true,
-      },
-      donate: {
-        text: "Donations",
-        url: "/donate",
         visible: true,
       },
     },
@@ -72,7 +87,7 @@ export const navigationData = {
 export const navigationMobileData: { [key: string]: NavigationButtonProperties } = {
   home: navigationData.home as NavigationButtonProperties,
   events: navigationData.events as NavigationButtonProperties,
-  leadership: navigationData.about.items.leadership as NavigationButtonProperties,
+  leadership: navigationData.members.items.leadership as NavigationButtonProperties,
   photos: navigationData.members.items.photos as NavigationButtonProperties,
   membership: navigationData.involve.items.membership as NavigationButtonProperties,
   faq: navigationData.about.items.faq as NavigationButtonProperties,
@@ -82,7 +97,7 @@ export const navigationMobileData: { [key: string]: NavigationButtonProperties }
 export const footerData: { [key: string]: NavigationButtonProperties } = {
   home: navigationData.home as NavigationButtonProperties,
   events: navigationData.events as NavigationButtonProperties,
-  leadership: navigationData.about.items.leadership as NavigationButtonProperties,
+  leadership: navigationData.members.items.leadership as NavigationButtonProperties,
   membership: navigationData.involve.items.membership as NavigationButtonProperties,
   faq: navigationData.about.items.faq as NavigationButtonProperties,
   contact: navigationData.about.items.contact as NavigationButtonProperties,
@@ -126,6 +141,8 @@ export const events: { [key: string]: { text: string; events: EventProperties[] 
         details: "https://www.google.com/",
         rsvp: "https://www.google.com/",
         image: "https://media1.tenor.com/m/j4i0LoRNDLoAAAAC/poland-pl.gif",
+        modified_by: "",
+        modified_date: "",
       },
     ],
   },
@@ -142,6 +159,8 @@ export const events: { [key: string]: { text: string; events: EventProperties[] 
         details: "https://www.google.com/",
         rsvp: "",
         image: "",
+        modified_by: "",
+        modified_date: "",
       },
       {
         title: "Polish Cultural Club Event 3",
@@ -153,6 +172,8 @@ export const events: { [key: string]: { text: string; events: EventProperties[] 
         details: "https://www.google.com/",
         rsvp: "https://www.google.com/",
         image: "https://media1.tenor.com/m/OPpKEHBtRLoAAAAC/poland-flag-gif.gif",
+        modified_by: "",
+        modified_date: "",
       },
     ],
   },
@@ -185,6 +206,8 @@ export const events: { [key: string]: { text: string; events: EventProperties[] 
         details: "https://www.google.com/",
         rsvp: "https://www.google.com/",
         image: "https://media1.tenor.com/m/j4i0LoRNDLoAAAAC/poland-pl.gif",
+        modified_by: "",
+        modified_date: "",
       },
     ],
   },
@@ -323,6 +346,8 @@ export type EventProperties = {
   details: string;
   rsvp: string;
   image: string;
+  modified_by: string;
+  modified_date: string;
 };
 
 export type QuickLinkProperties = {

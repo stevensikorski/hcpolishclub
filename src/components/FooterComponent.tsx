@@ -1,11 +1,10 @@
 import Image from "next/image";
 
-import { footerData, socials } from "@/library/data";
-import { GrFacebookOption, GrInstagram, GrLinkedinOption, GrYoutube } from "react-icons/gr";
+import { footerData, socials } from "@/lib/data";
 
-import QuickLinkComponent from "./QuickLinksComponent";
+import { QuickLinkComponent } from "./QuickLinksComponent";
 
-export default function FooterComponent() {
+export const FooterComponent = () => {
   return (
     <footer className="w-full bg-czerwony">
       <section className="page py-12">
@@ -48,4 +47,6 @@ export default function FooterComponent() {
       </section>
     </footer>
   );
-}
+};
+
+export default FooterComponent;

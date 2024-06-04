@@ -1,7 +1,7 @@
-import { MobileNavigationProperties } from "@/library/data";
+import { MobileNavigationProperties } from "@/lib/data";
 import clsx from "clsx";
 
-export default function MobileNavigationButton({ params }: { params: MobileNavigationProperties }) {
+export const MobileNavigationButton = ({ params }: { params: MobileNavigationProperties }) => {
   if (!params.visible) {
     return null;
   }
@@ -13,4 +13,6 @@ export default function MobileNavigationButton({ params }: { params: MobileNavig
       </a>
     </li>
   );
-}
+};
+
+export default MobileNavigationButton;

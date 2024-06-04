@@ -1,13 +1,11 @@
-import BannerComponent from "@/components/BannerComponent";
-import TitleComponent from "@/components/TitleComponent";
+import { BannerComponent } from "@/components/BannerComponent";
 
-import { filler } from "@/library/data";
+import { filler } from "@/lib/data";
 
 export default function LeadershipPage() {
   return (
     <main className="page-main">
-      <BannerComponent></BannerComponent>
-      <TitleComponent params={{ english: "Leadership", polish: "Kierownictwo Klubu" }}></TitleComponent>
+      <BannerComponent params={{ text: "Leadership" }}></BannerComponent>
       <section className="page text-padding">
         <p className="page-text">{filler.text}</p>
         <p className="page-text">{filler.text}</p>

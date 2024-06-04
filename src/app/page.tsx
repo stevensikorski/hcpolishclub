@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { filler } from "@/library/data";
+import { filler } from "@/lib/data";
 export default function Home() {
   return (
     <main className="page-main">

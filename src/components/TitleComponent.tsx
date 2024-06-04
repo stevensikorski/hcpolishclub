@@ -1,6 +1,6 @@
-import { LanguageProperties } from "@/library/data";
+import { LanguageProperties } from "@/lib/data";
 
-export default function TitleComponent({ params }: { params: LanguageProperties }) {
+export const TitleComponent = ({ params }: { params: LanguageProperties }) => {
   return (
     <section className="page text-padding">
       <h1 className="text-center font-semibold">{params.english}</h1>
@@ -8,4 +8,6 @@ export default function TitleComponent({ params }: { params: LanguageProperties 
       {/* <hr className="text-padding"></hr> */}
     </section>
   );
-}
+};
+
+export default TitleComponent;

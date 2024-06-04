@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
-import EventCardComponent from "@/components/EventCardComponent";
-import EventMonthComponent from "@/components/EventMonthComponent";
-import EventListComponent from "@/components/EventListComponent";
+import { EventCardComponent } from "@/components/EventCardComponent";
+import { EventMonthComponent } from "@/components/EventMonthComponent";
+import { EventListComponent } from "@/components/EventListComponent";
+import { BannerComponent } from "@/components/BannerComponent";
 
-import { events } from "@/library/data";
-import { isTimeAfter } from "@/library/utils";
-import BannerComponent from "@/components/BannerComponent";
+import { events } from "@/lib/data";
+import { isTimeAfter } from "@/lib/utils";
 
 export default function EventsPage() {
   const [isUpcomingOpen, setUpcomingOpen] = useState(true);
@@ -94,14 +94,12 @@ export default function EventsPage() {
 
   return (
     <main className="page-main">
-      <BannerComponent></BannerComponent>
+      <BannerComponent params={{ text: "Events" }}></BannerComponent>
       <section className="page flex text-padding">
-        {/* Filter Section */}
+        {/* Event Navigation Section */}
         <div className="w-1/4 p-4 flex-col desktop:flex hidden bg-slate-100 rounded-xl border">
-          <div>
-            <h2 className="font-semibold">Polish Cultural Club</h2>
-            <p className="mt-1">Event Navigation</p>
-          </div>
+          <h2 className="font-semibold">Polish Cultural Club</h2>
+          <p className="mt-1">Event Navigation</p>
           <hr></hr>
           {/* Upcoming Section */}
           <section>

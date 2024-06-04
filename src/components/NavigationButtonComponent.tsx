@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import { FaChevronDown } from "react-icons/fa";
-import { NavigationButtonProperties } from "@/library/data";
+import { NavigationButtonProperties } from "@/lib/data";
 
-export default function NavigationButton({ params }: { params: NavigationButtonProperties }) {
+export const NavigationButton = ({ params }: { params: NavigationButtonProperties }) => {
   if (!params.visible) {
     return null;
   }
@@ -32,7 +32,12 @@ export default function NavigationButton({ params }: { params: NavigationButtonP
               (key) =>
                 params.items[key].visible && (
                   <a key={key} href={params.items[key].url} className="block px-2 rounded-md">
-                    <p className="p-2 text-sm hover:text-czerwony transition duration-200">{params.items[key].text}</p>
+                    <p
+                      className={clsx("p-2 text-sm hover:text-czerwony transition duration-200", {
+                        "font-semibold": params.items[key].url && params.path === params.items[key].url.substring(1),
+                      })}>
+                      {params.items[key].text}
+                    </p>
                   </a>
                 )
             )}
@@ -41,4 +46,6 @@ export default function NavigationButton({ params }: { params: NavigationButtonP
       </ul>
     </li>
   );
-}
+};
+
+export default NavigationButton;

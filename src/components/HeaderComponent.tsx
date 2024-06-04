@@ -6,18 +6,19 @@ import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
-import { navigationData, navigationMobileData } from "@/library/data";
 import { MdMenu, MdClose } from "react-icons/md";
-import NavigationButton from "./NavigationButtonComponent";
-import MobileNavigationButton from "./MobileNavigationButtonComponent";
 
-export default function HeaderComponent() {
+import { NavigationButton } from "./NavigationButtonComponent";
+import { MobileNavigationButton } from "./MobileNavigationButtonComponent";
+import { navigationData, navigationMobileData } from "@/lib/data";
+
+export const HeaderComponent = () => {
   const path = usePathname().substring(1) || "home";
-  const [mobileNavigation, setMbileNavigation] = useState(false);
+  const [mobileNavigation, setMobileNavigation] = useState(false);
 
   const toggleMobileNavigation = () => {
     const mobileState = !mobileNavigation;
-    setMbileNavigation(mobileState);
+    setMobileNavigation(mobileState);
     if (mobileState) {
       document.body.style.overflow = "hidden";
     } else {
@@ -26,7 +27,7 @@ export default function HeaderComponent() {
   };
 
   const closeMobileNavigation = () => {
-    setMbileNavigation(false);
+    setMobileNavigation(false);
     document.body.style.overflow = "";
   };
 
@@ -71,4 +72,6 @@ export default function HeaderComponent() {
       </section>
     </header>
   );
-}
+};
+
+export default HeaderComponent;

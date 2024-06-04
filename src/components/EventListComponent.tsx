@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 
-import { TextProperties } from "@/library/data";
+import { TextProperties } from "@/lib/data";
 
-export default function EventListComponent({ params }: { params: TextProperties }) {
+export const EventListComponent = ({ params }: { params: TextProperties }) => {
   const scrollToElement = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -35,4 +35,4 @@ export default function EventListComponent({ params }: { params: TextProperties 
       </a>
     </li>
   );
-}
+};

@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-import { navigationData } from "@/library/data";
+import { navigationData } from "@/lib/data";
 
 export default function NotFound() {
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function NotFound() {
   return (
     <main className="page-main">
       <section className="page">
-        <div className="flex flex-col justify-center item-center h-landing text-center">
+        <div className="flex flex-col justify-center items-center h-landing">
           {/* Page Not Found */}
           <h1 className="font-bold text-3xl">Przepraszamy!</h1>
           <p className="mt-6">The page you are looking for cannot be found.</p>

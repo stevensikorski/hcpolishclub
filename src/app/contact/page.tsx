@@ -1,13 +1,11 @@
-import BannerComponent from "@/components/BannerComponent";
-import TitleComponent from "@/components/TitleComponent";
+import { BannerComponent } from "@/components/BannerComponent";
 
-import { filler } from "@/library/data";
+import { filler } from "@/lib/data";
 
 export default function ContactPage() {
   return (
     <main className="page-main">
-      <BannerComponent></BannerComponent>
-      <TitleComponent params={{ english: "Contact Us", polish: "Skontaktuj Się Z Nami" }}></TitleComponent>
+      <BannerComponent params={{ text: "Contact Us" }}></BannerComponent>
       <section className="page text-padding">
         <p className="page-text">{filler.text}</p>
         <p className="page-text">{filler.text}</p>

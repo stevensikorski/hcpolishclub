@@ -1,7 +1,7 @@
-import { QuickLinkProperties } from "@/library/data";
+import { QuickLinkProperties } from "@/lib/data";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
-export default function QuickLinkComponent({ params }: { params: QuickLinkProperties }) {
+export const QuickLinkComponent = ({ params }: { params: QuickLinkProperties }) => {
   if (!params.visible) {
     return null;
   }
@@ -13,4 +13,6 @@ export default function QuickLinkComponent({ params }: { params: QuickLinkProper
       </a>
     </li>
   );
-}
+};
+
+export default QuickLinkComponent;

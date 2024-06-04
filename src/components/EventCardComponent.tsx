@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { EventProperties } from "@/library/data";
-import { formatTime } from "@/library/utils";
+import { EventProperties } from "@/lib/data";
+import { formatTime } from "@/lib/utils";
 
-export default function EventCardComponent({ params }: { params: EventProperties }) {
+export const EventCardComponent = ({ params }: { params: EventProperties }) => {
   const monthsOfYear = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
@@ -58,4 +58,6 @@ export default function EventCardComponent({ params }: { params: EventProperties
       </div>
     </li>
   );
-}
+};
+
+export default EventCardComponent;
