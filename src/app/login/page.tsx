@@ -6,7 +6,7 @@ export default function LoginPage() {
   return (
     <main className="page-main">
       <section className="page h-landing flex flex-col justify-center items-center text-center">
-        <div className="desktop:h-1/2 desktop:w-1/3 p-6 bg-white rounded-xl border shadow-lg flex flex-col justify-center items-center">
+        <div className="p-6 flex flex-col justify-center items-center">
           {/* Polish Cultural Club */}
           <div className="flex desktop:mb-6">
             <Image src="/CoatOfArmsTransparent.svg" alt="Image" height="40" width="40" priority className="rounded-md p-0.5 bg-czerwony"></Image>

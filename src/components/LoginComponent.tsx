@@ -43,6 +43,8 @@ export const LoginComponent = () => {
         router.push("/dashboard");
       } else {
         setError(true);
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+        setError(false);
       }
     } catch (err: any) {}
   };
