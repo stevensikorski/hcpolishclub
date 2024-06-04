@@ -10,6 +10,7 @@ import { BannerComponent } from "@/components/BannerComponent";
 
 import { events } from "@/lib/data";
 import { isTimeAfter } from "@/lib/utils";
+import { eventNames } from "process";
 
 export default function EventsPage() {
   const [isUpcomingOpen, setUpcomingOpen] = useState(true);
@@ -50,6 +51,8 @@ export default function EventsPage() {
                 details: event.details,
                 rsvp: event.rsvp,
                 image: event.image,
+                modified_by: event.modified_by,
+                modified_date: event.modified_date,
               }}
             />
           ))}
@@ -85,6 +88,8 @@ export default function EventsPage() {
                 details: event.details,
                 rsvp: event.rsvp,
                 image: event.image,
+                modified_by: event.modified_by,
+                modified_date: event.modified_date,
               }}
             />
           ))}
