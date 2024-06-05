@@ -8,22 +8,8 @@ import EventCardComponent from "@/components/EventCardComponent";
 import EventMonthComponent from "@/components/EventMonthComponent";
 import EventListComponent from "@/components/EventListComponent";
 import BannerComponent from "@/components/BannerComponent";
+import { EventProperties } from "@/lib/data";
 import { isTimeAfter } from "@/lib/utils";
-
-type EventProperties = {
-  id: number;
-  title: string;
-  start: string;
-  end: string;
-  room: string;
-  address: string;
-  description: string;
-  details: string;
-  rsvp: string;
-  image: string;
-  modified_by: string;
-  modified_date: string;
-};
 
 export default function EventsPage() {
   const [events, setEvents] = useState<any[]>([]);
@@ -134,6 +120,7 @@ export default function EventsPage() {
                     <EventCardComponent
                       key={index}
                       params={{
+                        id: event.id,
                         title: event.title,
                         start: event.start,
                         end: event.end,
@@ -170,6 +157,7 @@ export default function EventsPage() {
                     <EventCardComponent
                       key={index}
                       params={{
+                        id: event.id,
                         title: event.title,
                         start: event.start,
                         end: event.end,
