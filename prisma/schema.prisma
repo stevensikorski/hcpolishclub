@@ -20,3 +20,18 @@ model User {
   password String
   name String
 }
+
+model Event {
+  id Int            @id @default(autoincrement())
+  title String
+  start DateTime
+  end DateTime
+  room String
+  address String
+  description String
+  details String?
+  rsvp String?
+  image String?
+  modified_by String
+  modified_date DateTime
+}

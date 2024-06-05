@@ -61,7 +61,7 @@ export const HeaderComponent = () => {
           <motion.div animate={{ x: mobileNavigation ? 0 : "100%" }} initial={{ x: "100%" }} transition={{ duration: 0.2 }} className="fixed top-0 left-0 h-full w-full">
             <div className="h-[200vh] w-screen px-6 absolute inset-0 bg-slate-50 mt-16 overflow-y-scroll">
               {/* Quick Links */}
-              <ul className="page grid">
+              <ul className="header grid">
                 {Object.keys(navigationMobileData).map((key) => {
                   return <MobileNavigationButton key={key} params={{ text: navigationMobileData[key].text, url: navigationMobileData[key].url, list: navigationMobileData[key].list, visible: navigationMobileData[key].visible, items: navigationMobileData[key].items, path: path, closeMobileNavigation: closeMobileNavigation }}></MobileNavigationButton>;
                 })}

@@ -1,16 +1,18 @@
 "use client";
 
 import { useEffect } from "react";
-
+import { useRouter } from "next/navigation";
 import { navigationData } from "@/lib/data";
 
 export default function NotFound() {
+  const router = useRouter();
+
   useEffect(() => {
     const timer = setTimeout(() => {
-      window.location.href = navigationData.home.url;
+      router.push(navigationData.home.url);
     }, 3000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [router]);
 
   return (
     <main className="page-main">

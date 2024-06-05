@@ -127,112 +127,6 @@ export const socials = [
   },
 ];
 
-export const events: { [key: string]: { text: string; events: EventProperties[] } } = {
-  jan2024: {
-    text: "January 2024",
-    events: [
-      {
-        title: "Polish Cultural Club Event 1",
-        start: "2024-01-29T18:00:00Z",
-        end: "2024-01-29T20:30:00Z",
-        room: "Thomas Hunter Hall Room 405",
-        address: "695 Park Ave, New York, NY",
-        description: "We are delighted to invite our members to our 2024 annual meeting. Join us at the Thomas Hunter Building to hear about what we've established for the club, vote on new club board members, and hear about our plans for the upcoming year.",
-        details: "https://www.google.com/",
-        rsvp: "https://www.google.com/",
-        image: "https://media1.tenor.com/m/j4i0LoRNDLoAAAAC/poland-pl.gif",
-        modified_by: "",
-        modified_date: "",
-      },
-    ],
-  },
-  feb2024: {
-    text: "February 2024",
-    events: [
-      {
-        title: "Polish Cultural Club Event 2",
-        start: "2024-02-14T18:00:00Z",
-        end: "2024-02-14T20:30:00Z",
-        room: "Thomas Hunter Hall Room 405",
-        address: "695 Park Ave, New York, NY",
-        description: "We are delighted to invite our members to our 2024 annual meeting. Join us at the Thomas Hunter Building to hear about what we've established for the club, vote on new club board members, and hear about our plans for the upcoming year.",
-        details: "https://www.google.com/",
-        rsvp: "",
-        image: "",
-        modified_by: "",
-        modified_date: "",
-      },
-      {
-        title: "Polish Cultural Club Event 3",
-        start: "2024-02-20T18:00:00Z",
-        end: "2024-02-20T20:30:00Z",
-        room: "Thomas Hunter Hall Room 405",
-        address: "695 Park Ave, New York, NY",
-        description: "We are delighted to invite our members to our 2024 annual meeting. Join us at the Thomas Hunter Building to hear about what we've established for the club, vote on new club board members, and hear about our plans for the upcoming year.",
-        details: "https://www.google.com/",
-        rsvp: "https://www.google.com/",
-        image: "https://media1.tenor.com/m/OPpKEHBtRLoAAAAC/poland-flag-gif.gif",
-        modified_by: "",
-        modified_date: "",
-      },
-    ],
-  },
-  mar2024: {
-    text: "March 2024",
-    events: [],
-  },
-  apr2024: {
-    text: "April 2024",
-    events: [],
-  },
-  may2024: {
-    text: "May 2024",
-    events: [],
-  },
-  jun2024: {
-    text: "June 2024",
-    events: [],
-  },
-  jul2024: {
-    text: "July 2024",
-    events: [
-      {
-        title: "Polish Cultural Club Event 4",
-        start: "2024-07-15T08:00:00Z",
-        end: "2024-07-15T10:30:00Z",
-        room: "Thomas Hunter Hall Room 405",
-        address: "695 Park Ave, New York, NY",
-        description: "We are delighted to invite our members to our 2024 annual meeting. Join us at the Thomas Hunter Building to hear about what we've established for the club, vote on new club board members, and hear about our plans for the upcoming year.",
-        details: "https://www.google.com/",
-        rsvp: "https://www.google.com/",
-        image: "https://media1.tenor.com/m/j4i0LoRNDLoAAAAC/poland-pl.gif",
-        modified_by: "",
-        modified_date: "",
-      },
-    ],
-  },
-  aug2024: {
-    text: "August 2024",
-    events: [],
-  },
-  sep2024: {
-    text: "September 2024",
-    events: [],
-  },
-  oct2024: {
-    text: "October 2024",
-    events: [],
-  },
-  nov2024: {
-    text: "November 2024",
-    events: [],
-  },
-  dec2024: {
-    text: "December 2024",
-    events: [],
-  },
-};
-
 export const SEOKeywords = [
   "Polish Cultural Club",
   "Hunter College",
@@ -334,20 +228,6 @@ export type NavigationButtonProperties = {
   visible: boolean;
   items: { [key: string]: any };
   path: string;
-};
-
-export type EventProperties = {
-  title: string;
-  start: string;
-  end: string;
-  room: string;
-  address: string;
-  description: string;
-  details: string;
-  rsvp: string;
-  image: string;
-  modified_by: string;
-  modified_date: string;
 };
 
 export type QuickLinkProperties = {

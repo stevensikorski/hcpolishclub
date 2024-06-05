@@ -1,8 +1,16 @@
 "use client";
 import Image from "next/image";
 import { LoginComponent } from "@/components/LoginComponent";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
+  const router = useRouter();
+  const { data: session } = useSession();
+  if (session) {
+    router.push("/dashboard");
+  }
+
   return (
     <main className="page-main">
       <section className="page h-landing flex flex-col justify-center items-center text-center">

@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
@@ -7,101 +8,75 @@ import EventCardComponent from "@/components/EventCardComponent";
 import EventMonthComponent from "@/components/EventMonthComponent";
 import EventListComponent from "@/components/EventListComponent";
 import BannerComponent from "@/components/BannerComponent";
-
-import { events } from "@/lib/data";
 import { isTimeAfter } from "@/lib/utils";
 
-export default function EventsPage() {
-  const [isUpcomingOpen, setUpcomingOpen] = useState(true);
-  const [isPreviousOpen, setPreviousOpen] = useState(false);
+type EventProperties = {
+  id: number;
+  title: string;
+  start: string;
+  end: string;
+  room: string;
+  address: string;
+  description: string;
+  details: string;
+  rsvp: string;
+  image: string;
+  modified_by: string;
+  modified_date: string;
+};
 
+export default function EventsPage() {
+  const [events, setEvents] = useState<any[]>([]);
+  const [isUpcomingOpen, setUpcomingOpen] = useState(false);
+  const [isPreviousOpen, setPreviousOpen] = useState(false);
   const toggleUpcoming = () => setUpcomingOpen(!isUpcomingOpen);
   const togglePrevious = () => setPreviousOpen(!isPreviousOpen);
-
   const currentDate = new Date().toISOString();
-  let hasUpcomingEvents = false;
-  let hasPreviousEvents = false;
 
-  const upcomingEventComponents = Object.keys(events)
-    .reverse()
-    .map((item) => {
-      const monthEvents = events[item].events;
-      const upcomingEvents = monthEvents.filter((event) => isTimeAfter(event.end, currentDate)).reverse();
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await fetch("/api/events", {
+          headers: {
+            Accept: "application/json",
+            method: "GET",
+          },
+        });
+        if (response?.ok) {
+          const data = await response.json();
+          setEvents(data.events);
+        }
+      } catch (error) {}
+    })();
+  }, []);
 
-      if (monthEvents.length === 0 || upcomingEvents.length === 0) {
-        return null;
+  const groupEventsByMonth = (events: EventProperties[]) => {
+    return events.reduce((acc: any, event: EventProperties) => {
+      const date = new Date(event.start);
+      const monthYear = date.toLocaleString("default", { month: "long", year: "numeric" });
+      if (!acc[monthYear]) {
+        acc[monthYear] = [];
       }
+      acc[monthYear].push(event);
+      return acc;
+    }, {});
+  };
 
-      hasUpcomingEvents = true;
+  const sortEventsByDateDesc = (events: EventProperties[]) => {
+    return events.sort((a, b) => new Date(b.start).getTime() - new Date(a.start).getTime());
+  };
 
-      return (
-        <React.Fragment key={item}>
-          <EventMonthComponent params={{ text: events[item].text }} />
-          {upcomingEvents.map((event, index) => (
-            <EventCardComponent
-              key={index}
-              params={{
-                title: event.title,
-                start: event.start,
-                end: event.end,
-                room: event.room,
-                address: event.address,
-                description: event.description,
-                details: event.details,
-                rsvp: event.rsvp,
-                image: event.image,
-                modified_by: event.modified_by,
-                modified_date: event.modified_date,
-              }}
-            />
-          ))}
-        </React.Fragment>
-      );
-    });
-
-  const previousEventComponents = Object.keys(events)
-    .reverse()
-    .map((item) => {
-      const monthEvents = events[item].events;
-      const previousEvents = monthEvents.filter((event) => isTimeAfter(currentDate, event.end)).reverse();
-
-      if (monthEvents.length === 0 || previousEvents.length === 0) {
-        return null;
-      }
-
-      hasPreviousEvents = true;
-
-      return (
-        <React.Fragment key={item}>
-          <EventMonthComponent params={{ text: events[item].text }} />
-          {previousEvents.map((event, index) => (
-            <EventCardComponent
-              key={index}
-              params={{
-                title: event.title,
-                start: event.start,
-                end: event.end,
-                room: event.room,
-                address: event.address,
-                description: event.description,
-                details: event.details,
-                rsvp: event.rsvp,
-                image: event.image,
-                modified_by: event.modified_by,
-                modified_date: event.modified_date,
-              }}
-            />
-          ))}
-        </React.Fragment>
-      );
-    });
+  const upcomingEvents = sortEventsByDateDesc(events.filter((event) => isTimeAfter(event.start, currentDate)));
+  const previousEvents = sortEventsByDateDesc(events.filter((event) => !isTimeAfter(event.start, currentDate)));
+  const groupedUpcomingEvents = groupEventsByMonth(upcomingEvents);
+  const groupedPreviousEvents = groupEventsByMonth(previousEvents);
 
   return (
     <main className="page-main">
       <BannerComponent></BannerComponent>
-      <section className="page flex text-padding">
-        {/* Event Navigation Section */}
-        <div className="w-1/4 p-4 flex-col desktop:flex hidden bg-slate-100 rounded-xl border">
+      <section className="page text-padding flex">
+        {/* Navigation Section */}
+        <div className="w-1/4 p-4 hidden desktop:flex flex-col bg-slate-100 rounded-xl border">
           <h2 className="font-semibold">Polish Cultural Club</h2>
           <p className="mt-1">Event Navigation</p>
           <hr></hr>
@@ -117,16 +92,7 @@ export default function EventsPage() {
 
             {/* Upcoming Events List */}
             <motion.div initial={{ height: "auto", opacity: 1 }} animate={{ height: isUpcomingOpen ? "auto" : 0, opacity: isUpcomingOpen ? 1 : 0 }} transition={{ height: { duration: 0.2 }, opacity: { duration: 0.2 } }} className="overflow-hidden mt-2">
-              <ul className="list-disc text-srebro text-sm ml-4">
-                {Object.keys(events)
-                  .reverse()
-                  .map((item) =>
-                    events[item].events
-                      .filter((event) => isTimeAfter(event.end, currentDate))
-                      .reverse()
-                      .map((event) => <EventListComponent key={event.title} params={{ text: event.title }} />)
-                  )}
-              </ul>
+              <ul className="list-disc text-srebro text-sm ml-4">{Object.keys(groupedUpcomingEvents).map((month) => groupedUpcomingEvents[month].filter((event: any) => isTimeAfter(event.start, currentDate)).map((event: any) => <EventListComponent key={event.id} params={{ text: event.title }} />))}</ul>
             </motion.div>
           </section>
 
@@ -144,16 +110,7 @@ export default function EventsPage() {
 
             {/* Previous Events List */}
             <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: isPreviousOpen ? "auto" : 0, opacity: isPreviousOpen ? 1 : 0 }} transition={{ height: { duration: 0.2 }, opacity: { duration: 0.2 } }} className="overflow-hidden mt-2">
-              <ul className="list-disc text-srebro text-sm ml-4">
-                {Object.keys(events)
-                  .reverse()
-                  .map((item) =>
-                    events[item].events
-                      .filter((event) => isTimeAfter(currentDate, event.end))
-                      .reverse()
-                      .map((event) => <EventListComponent key={event.title} params={{ text: event.title }} />)
-                  )}
-              </ul>
+              <ul className="list-disc text-srebro text-sm ml-4">{Object.keys(groupedPreviousEvents).map((month) => groupedPreviousEvents[month].filter((event: any) => !isTimeAfter(event.start, currentDate)).map((event: any) => <EventListComponent key={event.id} params={{ text: event.title }} />))}</ul>
             </motion.div>
           </section>
         </div>
@@ -165,12 +122,34 @@ export default function EventsPage() {
             <li>
               <h2 className="font-semibold mb-2 text-2xl">Upcoming Events</h2>
             </li>
-            {hasUpcomingEvents ? (
-              upcomingEventComponents
-            ) : (
+            {upcomingEvents.length === 0 ? (
               <li>
                 <p className="mb-2">There looks to be no upcoming events.</p>
               </li>
+            ) : (
+              Object.keys(groupedUpcomingEvents).map((month) => (
+                <div key={month}>
+                  <EventMonthComponent params={{ text: month }} />
+                  {groupedUpcomingEvents[month].map((event: any, index: any) => (
+                    <EventCardComponent
+                      key={index}
+                      params={{
+                        title: event.title,
+                        start: event.start,
+                        end: event.end,
+                        room: event.room,
+                        address: event.address,
+                        description: event.description,
+                        details: event.details,
+                        rsvp: event.rsvp,
+                        image: event.image,
+                        modified_by: event.modified_by,
+                        modified_date: event.modified_date,
+                      }}
+                    />
+                  ))}
+                </div>
+              ))
             )}
           </ul>
 
@@ -179,12 +158,34 @@ export default function EventsPage() {
             <li>
               <h2 className="font-semibold mb-2 text-2xl">Previous Events</h2>
             </li>
-            {hasPreviousEvents ? (
-              previousEventComponents
-            ) : (
+            {previousEvents.length === 0 ? (
               <li>
                 <p className="mb-2">There looks to be no previous events.</p>
               </li>
+            ) : (
+              Object.keys(groupedPreviousEvents).map((month) => (
+                <div key={month}>
+                  <EventMonthComponent params={{ text: month }} />
+                  {groupedPreviousEvents[month].map((event: any, index: any) => (
+                    <EventCardComponent
+                      key={index}
+                      params={{
+                        title: event.title,
+                        start: event.start,
+                        end: event.end,
+                        room: event.room,
+                        address: event.address,
+                        description: event.description,
+                        details: event.details,
+                        rsvp: event.rsvp,
+                        image: event.image,
+                        modified_by: event.modified_by,
+                        modified_date: event.modified_date,
+                      }}
+                    />
+                  ))}
+                </div>
+              ))
             )}
           </ul>
         </div>
