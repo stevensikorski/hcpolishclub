@@ -49,8 +49,11 @@
 }
 
 @layer components {
-  .page {
+  .header {
     @apply mx-auto tablet:max-w-screen-tablet desktop:max-w-screen-desktop px-3;
+  }
+  .page {
+    @apply mx-auto tablet:max-w-screen-tablet desktop:max-w-screen-desktop px-6 desktop:px-3;
   }
   .full {
     @apply mx-auto max-w-full;
@@ -80,7 +83,7 @@
     @apply h-1/2 text-sm text-szary tracking-tighter text-nowrap flex items-center;
   }
   .text-padding {
-    @apply my-6 desktop:my-12;
+    @apply my-6 desktop:my-16;
   }
 }
 

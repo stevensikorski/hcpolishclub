@@ -29,10 +29,12 @@ export const EventListComponent = ({ params }: { params: TextProperties }) => {
   }, []);
 
   return (
-    <li className="ml-[6px] my-2">
+    <li className="ml-[6px] mt-2">
       <a href="#" onClick={(e) => handleClick(e, params.text)}>
         <p className="text-srebro text-sm">{params.text}</p>
       </a>
     </li>
   );
 };
+
+export default EventListComponent;

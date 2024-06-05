@@ -33,7 +33,7 @@ export const HeaderComponent = () => {
 
   return (
     <header className="fixed top-0 h-16 w-full bg-white border-b-2 shadow-lg z-50">
-      <section className="page flex items-center h-full">
+      <section className="header flex items-center h-full">
         {/* Polish Cultural Club */}
         <a href={navigationData.home.url} className="flex mr-3 group">
           <Image src="/CoatOfArmsTransparent.svg" alt="Image" height="40" width="40" priority className="rounded-md p-0.5 bg-czerwony"></Image>

@@ -19,24 +19,14 @@ export const navigationData = {
     list: true,
     visible: true,
     items: {
-      leadership: {
-        text: "Leadership",
-        url: "/leadership",
-        visible: true,
-      },
       photos: {
         text: "Photos",
         url: "/photos",
         visible: true,
       },
-      login: {
-        text: "Login",
-        url: "/login",
-        visible: false,
-      },
-      portal: {
-        text: "Portal",
-        url: "/portal",
+      leadership: {
+        text: "Leadership",
+        url: "/leadership",
         visible: true,
       },
       dashboard: {
@@ -52,19 +42,19 @@ export const navigationData = {
     list: true,
     visible: true,
     items: {
-      culturalclub: {
-        text: "Cultural Club",
-        url: "/culturalclub",
+      history: {
+        text: "History",
+        url: "/history",
+        visible: true,
+      },
+      mission: {
+        text: "Mission",
+        url: "/mission",
         visible: true,
       },
       faq: {
-        text: "FAQ",
+        text: "Questions",
         url: "/faq",
-        visible: true,
-      },
-      contact: {
-        text: "Contact Us",
-        url: "/contact",
         visible: true,
       },
     },
@@ -75,9 +65,19 @@ export const navigationData = {
     list: true,
     visible: true,
     items: {
-      membership: {
-        text: "Become a Member",
-        url: "/membership",
+      member: {
+        text: "Membership",
+        url: "/member",
+        visible: true,
+      },
+      resources: {
+        text: "Resources",
+        url: "/resources",
+        visible: true,
+      },
+      contact: {
+        text: "Contact Us",
+        url: "/contact",
         visible: true,
       },
     },
@@ -89,18 +89,18 @@ export const navigationMobileData: { [key: string]: NavigationButtonProperties }
   events: navigationData.events as NavigationButtonProperties,
   leadership: navigationData.members.items.leadership as NavigationButtonProperties,
   photos: navigationData.members.items.photos as NavigationButtonProperties,
-  membership: navigationData.involve.items.membership as NavigationButtonProperties,
+  membership: navigationData.involve.items.member as NavigationButtonProperties,
   faq: navigationData.about.items.faq as NavigationButtonProperties,
-  contact: navigationData.about.items.contact as NavigationButtonProperties,
+  contact: navigationData.involve.items.contact as NavigationButtonProperties,
 };
 
 export const footerData: { [key: string]: NavigationButtonProperties } = {
   home: navigationData.home as NavigationButtonProperties,
   events: navigationData.events as NavigationButtonProperties,
   leadership: navigationData.members.items.leadership as NavigationButtonProperties,
-  membership: navigationData.involve.items.membership as NavigationButtonProperties,
+  membership: navigationData.involve.items.member as NavigationButtonProperties,
   faq: navigationData.about.items.faq as NavigationButtonProperties,
-  contact: navigationData.about.items.contact as NavigationButtonProperties,
+  contact: navigationData.involve.items.contact as NavigationButtonProperties,
 };
 
 import { FacebookIcon, InstagramIcon, YoutubeIcon, LinkedinIcon } from "@/components/SocialMediaComponents";
@@ -372,7 +372,12 @@ export type TextProperties = {
   text: string;
 };
 
-export type LanguageProperties = {
+export type TitleProperties = {
   english: string;
   polish: string;
+};
+
+export type DirectoryProperties = {
+  group: string;
+  page: string;
 };

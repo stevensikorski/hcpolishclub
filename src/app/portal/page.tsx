@@ -2,14 +2,10 @@ import { prisma } from "@/lib/prisma";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/options";
 import { User } from "../user";
-import { LoginButton, LogoutButton } from "../auth";
+import { LogoutButton } from "../auth";
 
 export default async function PortalPage() {
-  const user = await prisma.user.findFirst({
-    where: {
-      username: "stevensikorski",
-    },
-  });
+  const user = await prisma.user.findFirst();
 
   const session = await getServerSession(authOptions);
 
@@ -18,7 +14,6 @@ export default async function PortalPage() {
       <section className="page text-padding">
         <p className="page-text">This is the dashboard page.</p>
         <p>Hello, {user?.name}</p>
-        <LoginButton></LoginButton>
         <LogoutButton></LogoutButton>
         <h2>Server Session</h2>
         <pre>{JSON.stringify(session)}</pre>

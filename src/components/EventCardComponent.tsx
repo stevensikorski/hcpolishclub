@@ -24,8 +24,8 @@ export const EventCardComponent = ({ params }: { params: EventProperties }) => {
     <li id={params.title} className="h-72 w-full border rounded-xl flex my-6 desktop:my-8 bg-slate-100">
       {/* Calendar Section */}
       <div className="h-full flex flex-col justify-center items-center text-center border-r rounded-l-xl">
-        <p className="text-sm text-czerwony mx-6">{WEEKDAY}</p>
-        <p className="text-2xl font-semibold text-czarny mx-6 pb-1">{day}</p>
+        <p className="text-sm text-czerwony mx-4">{WEEKDAY}</p>
+        <p className="text-2xl font-semibold text-czarny mx-4 pb-1">{day}</p>
       </div>
 
       {/* Details Section */}
@@ -41,13 +41,13 @@ export const EventCardComponent = ({ params }: { params: EventProperties }) => {
           <p className="text-gray-500 text-sm overflow-hidden line-clamp-3">{params.description}</p>
         </div>
         <div className="mt-4 flex items-center gap-4">
-          <Link href={params.details} target="_blank" className={clsx("flex items-center bg-srebro p-1 rounded-md hover:bg-czerwony transition duration-200", { hidden: !params.details })}>
-            <MdOutlineKeyboardArrowRight className="size-5 text-white"></MdOutlineKeyboardArrowRight>
-            <p className="pr-1 text-white">Details</p>
+          <Link href={params.details} target="_blank" className={clsx("flex justify-center items-center bg-srebro px-2 p-1 rounded-md hover:bg-czerwony transition duration-200", { hidden: !params.details })}>
+            <MdOutlineKeyboardArrowRight className="h-6 text-white"></MdOutlineKeyboardArrowRight>
+            <p className="h-6 text-white text-base px-1">Details</p>
           </Link>
-          <Link href={params.rsvp} target="_blank" className={clsx("flex items-center bg-srebro p-1 rounded-md hover:bg-czerwony transition duration-200", { hidden: !params.rsvp })}>
-            <MdOutlineKeyboardArrowRight className="size-5 text-white"></MdOutlineKeyboardArrowRight>
-            <p className="pr-1 text-white">RSVP</p>
+          <Link href={params.rsvp} target="_blank" className={clsx("flex justify-center items-center bg-srebro px-2 p-1 rounded-md hover:bg-czerwony transition duration-200", { hidden: !params.rsvp })}>
+            <MdOutlineKeyboardArrowRight className="h-6 text-white"></MdOutlineKeyboardArrowRight>
+            <p className="h-6 text-white text-base px-1">RSVP</p>
           </Link>
         </div>
       </div>

@@ -4,13 +4,13 @@ import TitleComponent from "@/components/TitleComponent";
 
 import { filler } from "@/lib/data";
 
-export default function ContactPage() {
+export default function MissionPage() {
   return (
     <main className="page-main">
       <BannerComponent></BannerComponent>
       <section className="page text-padding">
-        <DirectoryComponent params={{ group: "Get Involved", page: "Contact Us" }}></DirectoryComponent>
-        <TitleComponent params={{ english: "Contact Us", polish: "Skontaktuj Się z Nami" }}></TitleComponent>
+        <DirectoryComponent params={{ group: "About Us", page: "Mission" }}></DirectoryComponent>
+        <TitleComponent params={{ english: "Mission", polish: "Misja" }}></TitleComponent>
         <p className="page-text">{filler.text}</p>
         <p className="page-text">{filler.text}</p>
         <p className="page-text">{filler.text}</p>

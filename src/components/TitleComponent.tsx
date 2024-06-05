@@ -1,11 +1,11 @@
-import { LanguageProperties } from "@/lib/data";
+import { TitleProperties } from "@/lib/data";
 
-export const TitleComponent = ({ params }: { params: LanguageProperties }) => {
+export const TitleComponent = ({ params }: { params: TitleProperties }) => {
   return (
-    <section className="page text-padding">
-      <h1 className="text-center font-semibold">{params.english}</h1>
-      <p className="mt-2 text-center">{params.polish}</p>
-      {/* <hr className="text-padding"></hr> */}
+    <section className="my-6">
+      <h1 className="font-semibold">{params.english}</h1>
+      <p className="mt-2 pb-6">{params.polish}</p>
+      <hr></hr>
     </section>
   );
 };

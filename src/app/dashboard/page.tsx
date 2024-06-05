@@ -1,14 +1,11 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/options";
+import DashboardHeaderComponent from "@/components/DashboardHeaderComponent";
 
-export default async function DashboardPage() {
-  const session = await getServerSession(authOptions);
-
+export default function DashboardPage() {
   return (
     <main className="page-main">
-      <section className="page text-padding invisible desktop:visible">
-        <p>Welcome {session?.user?.name}</p>
-      </section>
+      <DashboardHeaderComponent></DashboardHeaderComponent>
+
+      <section className="page"></section>
     </main>
   );
 }
