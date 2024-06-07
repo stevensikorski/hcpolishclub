@@ -13,6 +13,10 @@ export const EventCardComponent = ({ params }: { params: EventProperties }) => {
   const startDate = new Date(params.start);
   const endDate = new Date(params.end);
 
+  if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
+    return null;
+  }
+
   const startTime = formatTime(startDate);
   const endTime = formatTime(endDate);
   const day = startDate.getDate();
@@ -23,9 +27,9 @@ export const EventCardComponent = ({ params }: { params: EventProperties }) => {
   return (
     <li id={params.title} className="h-72 w-full border rounded-xl flex my-6 desktop:my-8 bg-slate-100">
       {/* Calendar Section */}
-      <div className="h-full flex flex-col justify-center items-center text-center border-r rounded-l-xl">
-        <p className="text-sm text-czerwony mx-4">{WEEKDAY}</p>
-        <p className="text-2xl font-semibold text-czarny mx-4 pb-1">{day}</p>
+      <div className="h-full w-24 flex flex-col justify-center items-center text-center border-r rounded-l-xl">
+        <p className="text-sm text-czerwony">{WEEKDAY}</p>
+        <p className="text-2xl font-semibold text-czarny pb-1">{day}</p>
       </div>
 
       {/* Details Section */}
@@ -36,7 +40,7 @@ export const EventCardComponent = ({ params }: { params: EventProperties }) => {
           </p>
           <h2 className="text-czarny text-base desktop:text-xl font-semibold my-1">{params.title}</h2>
           <p className="text-szary text-sm font-semibold">{params.room}</p>
-          <p className="text-szary text-sm">{params.address}</p>
+          <p className="text-szary text-sm">{params.address || "695 Park Ave, New York, NY"}</p>
           <br />
           <p className="text-gray-500 text-sm overflow-hidden line-clamp-3">{params.description}</p>
         </div>

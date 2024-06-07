@@ -31,6 +31,11 @@ export default function EventsPage() {
         if (response?.ok) {
           const data = await response.json();
           setEvents(data.events);
+
+          const upcomingList = data.events.filter((event: EventProperties) => isTimeAfter(event.start, new Date().toISOString()));
+          if (upcomingList.length !== 0) {
+            setUpcomingOpen(true);
+          }
         }
       } catch (error) {}
     })();
