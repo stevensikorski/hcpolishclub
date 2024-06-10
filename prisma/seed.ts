@@ -16,7 +16,6 @@ async function main() {
   //     name: "Firstname Lastname",
   //   },
   // });
-
   // const event = await prisma.event.upsert({
   //   where: { id: 3 },
   //   update: {},
@@ -34,14 +33,16 @@ async function main() {
   //     modified_date: new Date().toISOString(),
   //   },
   // });
-
-  const deletedEvents = await prisma.event.deleteMany({
-    where: {
-      id: {
-        in: [1, 2, 3, 4, 5, 6],
-      },
-    },
-  });
+  // const event = await prisma.event.delete({
+  //   where: { id: 3 },
+  // });
+  // const events = await prisma.event.deleteMany({
+  //   where: {
+  //     id: {
+  //       in: [1, 2, 3, 4, 5, 6],
+  //     },
+  //   },
+  // });
 }
 
 main()

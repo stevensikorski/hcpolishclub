@@ -15,8 +15,14 @@
   p {
     @apply text-sm tablet:text-base text-szary;
   }
+  th {
+    @apply text-srebro font-medium text-sm;
+  }
+  td {
+    @apply text-szary text-sm text-center text-nowrap whitespace-nowrap;
+  }
   hr {
-    @apply my-3 desktop:my-6;
+    @apply my-3 desktop:my-6 text-center text-nowrap;
   }
   input[type="checkbox"] {
     -webkit-appearance: none;
@@ -84,6 +90,9 @@
   }
   .text-padding {
     @apply my-6 desktop:my-16;
+  }
+  .dashboard-padding {
+    @apply py-1 px-2 border-b;
   }
 }
 

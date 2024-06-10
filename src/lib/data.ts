@@ -19,9 +19,9 @@ export const navigationData = {
     list: true,
     visible: true,
     items: {
-      photos: {
-        text: "Photos",
-        url: "/photos",
+      community: {
+        text: "Community",
+        url: "/community",
         visible: true,
       },
       leadership: {
@@ -88,7 +88,6 @@ export const navigationMobileData: { [key: string]: NavigationButtonProperties }
   home: navigationData.home as NavigationButtonProperties,
   events: navigationData.events as NavigationButtonProperties,
   leadership: navigationData.members.items.leadership as NavigationButtonProperties,
-  photos: navigationData.members.items.photos as NavigationButtonProperties,
   membership: navigationData.involve.items.member as NavigationButtonProperties,
   faq: navigationData.about.items.faq as NavigationButtonProperties,
   contact: navigationData.involve.items.contact as NavigationButtonProperties,

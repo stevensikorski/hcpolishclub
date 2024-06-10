@@ -7,9 +7,8 @@ import { FaCheck } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import clsx from "clsx";
 
-export default function DashboardPage() {
+export default function CreateEventPage() {
   const { data: session } = useSession();
-
   const [title, setTitle] = useState("");
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
@@ -22,7 +21,6 @@ export default function DashboardPage() {
   const [modified_by, setModified] = useState("");
   const [modified_date, setModifiedTime] = useState("");
   const [error, setError] = useState(false);
-
   const router = useRouter();
 
   const onSubmit = async (e: React.FormEvent) => {
@@ -62,15 +60,12 @@ export default function DashboardPage() {
         await new Promise((resolve) => setTimeout(resolve, 3000));
         setError(false);
       }
-    } catch (error) {
-      console.error(error);
-    }
+    } catch (error) {}
   };
 
   return (
     <main className="page-main">
       <DashboardHeaderComponent />
-
       <section className="page">
         {/* Event Preview */}
         <div className="w-full desktop:w-3/4 min-h-16">

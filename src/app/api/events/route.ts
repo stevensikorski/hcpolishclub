@@ -65,3 +65,28 @@ export async function POST(request: Request) {
     },
   });
 }
+
+export async function DELETE(request: Request) {
+  const { id } = await request.json();
+  const session = await getServerSession(authOptions);
+
+  if (!session) {
+    return new NextResponse(JSON.stringify({ error: "unauthorized" }), { status: 401 });
+  }
+
+  if (!id) {
+    return new NextResponse(JSON.stringify({ error: "id is required" }), { status: 400 });
+  }
+
+  const event = await prisma.event.delete({
+    where: { id },
+  });
+
+  const key = "events";
+  const cachedEvents = cache.get(key);
+  if (cachedEvents) {
+    cache.del(key);
+  }
+
+  return NextResponse.json({ message: "Event deleted successfully" });
+}
