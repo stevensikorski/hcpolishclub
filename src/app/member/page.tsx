@@ -8,7 +8,7 @@ export default function MemberPage() {
   return (
     <main className="page-main">
       <BannerComponent></BannerComponent>
-      <section className="page text-padding">
+      <section className="page text-padding min-h-screen">
         <DirectoryComponent params={{ group: "Get Involved", page: "Membership" }}></DirectoryComponent>
         <TitleComponent params={{ english: "Membership", polish: "Członkostwo" }}></TitleComponent>
         <p className="page-text">{filler.text}</p>

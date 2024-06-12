@@ -5,8 +5,9 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 export const BannerComponent = () => {
   const scrollPage = () => {
+    const bannerHeight = window.innerHeight * 0.5 - parseFloat(getComputedStyle(document.documentElement).fontSize) * 2;
     window.scrollTo({
-      top: window.innerHeight / 2 - parseFloat(getComputedStyle(document.documentElement).fontSize) * 4,
+      top: bannerHeight,
       behavior: "smooth",
     });
   };

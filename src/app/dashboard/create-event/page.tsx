@@ -66,7 +66,7 @@ export default function CreateEventPage() {
   return (
     <main className="page-main">
       <DashboardHeaderComponent />
-      <section className="page">
+      <section className="page min-h-screen">
         {/* Event Preview */}
         <div className="w-full desktop:w-3/4 min-h-16">
           <h2 className="font-semibold mt-6 -mb-6">Event Preview</h2>

@@ -32,7 +32,7 @@ export const HeaderComponent = () => {
   };
 
   return (
-    <header className="fixed top-0 h-16 w-full bg-white border-b-2 shadow-lg z-50">
+    <header className="fixed top-0 h-16 w-full bg-white border-b-2 shadow-sm z-50">
       <section className="header flex items-center h-full">
         {/* Polish Cultural Club */}
         <a href={navigationData.home.url} className="flex mr-3 group">

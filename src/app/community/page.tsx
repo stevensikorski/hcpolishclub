@@ -8,7 +8,7 @@ export default function FrequentlyAskedQuestionsPage() {
   return (
     <main className="page-main">
       <BannerComponent></BannerComponent>
-      <section className="page text-padding">
+      <section className="page text-padding min-h-screen">
         <DirectoryComponent params={{ group: "Members", page: "Community" }}></DirectoryComponent>
         <TitleComponent params={{ english: "Community", polish: "Społeczność" }}></TitleComponent>
         <p className="page-text">{filler.text}</p>

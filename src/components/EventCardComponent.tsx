@@ -25,7 +25,7 @@ export const EventCardComponent = ({ params }: { params: EventProperties }) => {
   const WEEKDAY = weekday.substring(0, 3).toUpperCase();
 
   return (
-    <li id={params.title} className="h-72 w-full border rounded-xl flex my-6 desktop:my-8 bg-slate-100">
+    <li id={params.title} className="h-72 w-full border rounded-xl flex my-6 desktop:my-8 bg-slate-50">
       {/* Calendar Section */}
       <div className="h-full w-24 flex flex-col justify-center items-center text-center border-r rounded-l-xl">
         <p className="text-sm text-czerwony">{WEEKDAY}</p>
@@ -46,11 +46,11 @@ export const EventCardComponent = ({ params }: { params: EventProperties }) => {
         </div>
         <div className="mt-4 flex items-center gap-4">
           <Link href={params.details} target="_blank" className={clsx("flex justify-center items-center bg-srebro px-2 p-1 rounded-md hover:bg-czerwony transition duration-200", { hidden: !params.details })}>
-            <MdOutlineKeyboardArrowRight className="h-6 text-white"></MdOutlineKeyboardArrowRight>
+            <MdOutlineKeyboardArrowRight className="size-5 text-white"></MdOutlineKeyboardArrowRight>
             <p className="h-6 text-white text-base px-1">Details</p>
           </Link>
           <Link href={params.rsvp} target="_blank" className={clsx("flex justify-center items-center bg-srebro px-2 p-1 rounded-md hover:bg-czerwony transition duration-200", { hidden: !params.rsvp })}>
-            <MdOutlineKeyboardArrowRight className="h-6 text-white"></MdOutlineKeyboardArrowRight>
+            <MdOutlineKeyboardArrowRight className="size-5 text-white"></MdOutlineKeyboardArrowRight>
             <p className="h-6 text-white text-base px-1">RSVP</p>
           </Link>
         </div>

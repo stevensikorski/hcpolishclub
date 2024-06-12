@@ -65,9 +65,9 @@ export default function EventsPage() {
   return (
     <main className="page-main">
       <BannerComponent></BannerComponent>
-      <section className="page text-padding flex">
+      <section className="page text-padding flex min-h-screen">
         {/* Navigation Section */}
-        <div className="w-1/4 p-4 hidden desktop:flex flex-col bg-slate-100 rounded-xl border">
+        <div className="w-1/4 p-4 hidden desktop:flex flex-col bg-white">
           <h2 className="font-semibold">Polish Cultural Club</h2>
           <p className="mt-1">Event Navigation</p>
           <hr></hr>

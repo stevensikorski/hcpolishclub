@@ -45,7 +45,7 @@ export default function DeleteEventPage() {
   return (
     <main className="page-main">
       <DashboardHeaderComponent />
-      <section className="full">
+      <section className="page min-h-screen">
         <div className="overflow-x-auto">
           <table className="min-w-full">
             <thead>

@@ -17,7 +17,7 @@ const config: Config = {
         desktop: "1280px",
       },
       height: {
-        banner: "calc(50vh - 4rem)",
+        banner: "calc(50vh - 2rem)",
         landing: "calc(100vh - 4rem)",
       },
     },

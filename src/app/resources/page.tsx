@@ -8,7 +8,7 @@ export default function ResourcesPage() {
   return (
     <main className="page-main">
       <BannerComponent></BannerComponent>
-      <section className="page text-padding">
+      <section className="page text-padding min-h-screen">
         <DirectoryComponent params={{ group: "Get Involved", page: "Resources" }}></DirectoryComponent>
         <TitleComponent params={{ english: "Resources", polish: "Zasoby" }}></TitleComponent>
         <p className="page-text">{filler.text}</p>

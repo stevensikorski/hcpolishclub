@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-slate-50;
+    @apply bg-white;
   }
   h1 {
     @apply text-xl tablet:text-2xl text-czarny;

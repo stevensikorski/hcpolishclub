@@ -8,7 +8,7 @@ export default function MissionPage() {
   return (
     <main className="page-main">
       <BannerComponent></BannerComponent>
-      <section className="page text-padding">
+      <section className="page text-padding min-h-screen">
         <DirectoryComponent params={{ group: "About Us", page: "Mission" }}></DirectoryComponent>
         <TitleComponent params={{ english: "Mission", polish: "Misja" }}></TitleComponent>
         <p className="page-text">{filler.text}</p>

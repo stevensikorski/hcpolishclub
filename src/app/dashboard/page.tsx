@@ -6,7 +6,7 @@ export default function DashboardPage() {
     <main className="page-main">
       <DashboardHeaderComponent></DashboardHeaderComponent>
 
-      <section className="page">
+      <section className="page min-h-screen">
         <ul className="grid grid-cols-1 gap-2 mt-2">
           <li className="h-20 w-full bg-white rounded-xl border flex justify-between items-center">
             <p className="text-lg font-semibold ml-4">Create Event</p>
