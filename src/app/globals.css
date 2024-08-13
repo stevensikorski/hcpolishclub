@@ -2,20 +2,102 @@
 @tailwind components;
 @tailwind utilities;
 
-.font-ebgaramond {
-  font-family: var(--font-ebgaramond);
+@layer base {
+  body {
+    @apply bg-white;
+  }
+  h1 {
+    @apply text-xl tablet:text-2xl text-czarny;
+  }
+  h2 {
+    @apply text-lg tablet:text-xl text-czarny;
+  }
+  p {
+    @apply text-sm tablet:text-base text-szary;
+  }
+  th {
+    @apply text-srebro font-medium text-sm;
+  }
+  td {
+    @apply text-szary text-sm text-center text-nowrap whitespace-nowrap;
+  }
+  hr {
+    @apply my-3 desktop:my-6 text-center text-nowrap;
+  }
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  input[type="checkbox"]:checked {
+    background-color: #dc143c;
+    border-color: #dc143c;
+  }
+  input[type="checkbox"]:checked::after {
+    content: "✓";
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    border: 1px solid white;
+    -webkit-text-fill-color: #52525b;
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    box-shadow: 0 0 0px 1000px white inset;
+    transition: background-color 5000s ease-in-out 0s;
+    color: white;
+  }
 }
 
-.font-merriweather {
-  font-family: var(--font-merriweather);
+@layer components {
+  .header {
+    @apply mx-auto tablet:max-w-screen-tablet desktop:max-w-screen-desktop px-3;
+  }
+  .page {
+    @apply mx-auto tablet:max-w-screen-tablet desktop:max-w-screen-desktop px-6 desktop:px-3;
+  }
+  .full {
+    @apply mx-auto max-w-full;
+  }
+  .page-main {
+    @apply pt-16 min-h-screen;
+  }
+  .page-text {
+    @apply mb-4;
+  }
+  .footer-text {
+    @apply text-white text-sm tablet:text-base;
+  }
+  .footer-social {
+    @apply size-5 tablet:size-6 text-white hover:text-red-800 transition duration-200;
+  }
+  .footer-icon {
+    @apply size-5 tablet:size-6 text-white group-hover:text-red-800 transition duration-200;
+  }
+  .footer-link {
+    @apply ml-1 group-hover:text-red-800 transition duration-200;
+  }
+  .mobile-button {
+    @apply size-6 text-szary;
+  }
+  .logo-text {
+    @apply h-1/2 text-sm text-szary tracking-tighter text-nowrap flex items-center;
+  }
+  .text-padding {
+    @apply my-6 desktop:my-16;
+  }
+  .dashboard-padding {
+    @apply py-1 px-2 border-b;
+  }
 }
 
-.font-roboto {
-  font-family: var(--font-roboto);
-}
-
-.transition-property {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+@layer utilities {
+  .duration-250 {
+    transition: all 0.25s;
+  }
 }
